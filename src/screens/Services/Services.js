@@ -33,7 +33,12 @@ import { ListCard } from 'components/ListItem/ListCard';
 import ContainerWithHeader from 'components/Layout/ContainerWithHeader';
 
 // constants
-import { EXCHANGE, LENDING_CHOOSE_DEPOSIT, POOLTOGETHER_DASHBOARD } from 'constants/navigationConstants';
+import {
+  EXCHANGE,
+  LENDING_CHOOSE_DEPOSIT,
+  POOLTOGETHER_DASHBOARD,
+  SABLIER_STREAMS,
+} from 'constants/navigationConstants';
 import { defaultFiatCurrency, ETH } from 'constants/assetsConstants';
 
 // utils
@@ -116,6 +121,12 @@ class ServicesScreen extends React.Component<Props> {
             toAssetCode: ETH,
             displayFiatOptionsFirst: true,
           }),
+      },
+      {
+        key: 'sablier',
+        title: 'Sablier money streaming',
+        body: 'Stream money to people and organizations in real-time with just one deposit',
+        action: () => navigation.navigate(SABLIER_STREAMS),
       },
       {
         key: 'depositPool',

@@ -349,6 +349,8 @@ PODS:
     - React
   - react-native-cookies (3.2.0):
     - React
+  - react-native-date-picker (3.0.2):
+    - React
   - react-native-in-app-browser (3.2.1):
     - React
   - react-native-intercom (13.2.0):
@@ -510,6 +512,7 @@ DEPENDENCIES:
   - react-native-camera (from `../node_modules/react-native-camera`)
   - react-native-contacts (from `../node_modules/react-native-contacts`)
   - react-native-cookies (from `../node_modules/react-native-cookies/ios`)
+  - react-native-date-picker (from `../node_modules/react-native-date-picker`)
   - "react-native-in-app-browser (from `../node_modules/@matt-block/react-native-in-app-browser/ios`)"
   - react-native-intercom (from `../node_modules/react-native-intercom`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
@@ -640,6 +643,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-contacts"
   react-native-cookies:
     :path: "../node_modules/react-native-cookies/ios"
+  react-native-date-picker:
+    :path: "../node_modules/react-native-date-picker"
   react-native-in-app-browser:
     :path: "../node_modules/@matt-block/react-native-in-app-browser/ios"
   react-native-intercom:
@@ -779,6 +784,7 @@ SPEC CHECKSUMS:
   react-native-camera: 8ab02aac456a7db830980cef5f3772644fe96e1f
   react-native-contacts: a30bebe23ddeda7c34bf97cfa5f952201efc5329
   react-native-cookies: 854d59c4135c70b92a02ca4930e68e4e2eb58150
+  react-native-date-picker: aec68ba9b276beddd2cf941bd7cebf459ac9d301
   react-native-in-app-browser: fd1f47f321de31c824a202383aa6e33e1c03abb4
   react-native-intercom: 25ceddd224fdf63be29d4e25e95a893e5befe18f
   react-native-netinfo: cb74e17062b2af5a16a4b137f32495f241df1a8e
@@ -827,6 +833,6 @@ SPEC CHECKSUMS:
   TcpSockets: 14306fb79f9750ea7d2ddd02d8bed182abb01797
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: f2ba0fe274339047de37310773222c70414cf4da
+PODFILE CHECKSUM: ca6101c405e7ac86fe56d571073853db1865e959
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

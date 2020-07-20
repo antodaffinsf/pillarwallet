@@ -46,6 +46,7 @@ import { SEND_TOKEN_CONFIRM, SEND_COLLECTIBLE_CONFIRM, POOLTOGETHER_DASHBOARD } 
 import { COLLECTIBLES, DAI } from 'constants/assetsConstants';
 import { EXCHANGE } from 'constants/exchangeConstants';
 import { POOLTOGETHER_DEPOSIT_TRANSACTION } from 'constants/poolTogetherConstants';
+import { SABLIER_CREATE_STREAM } from 'constants/sablierConstants';
 
 type Props = {
   navigation: NavigationScreenProp<*>,
@@ -76,6 +77,8 @@ const getTransactionSuccessMessage = (transactionType: ?string) => {
     return 'It may take some time for this transaction to complete';
   } else if (transactionType === POOLTOGETHER_DEPOSIT_TRANSACTION) {
     return 'Watch the pool and let luck be with you';
+  } else if (transactionType === SABLIER_CREATE_STREAM) {
+    return 'Now you can watch how the funds go to brandon';
   }
   return 'It will be settled in a few moments, depending on your gas price settings and Ethereum network load';
 };
@@ -91,6 +94,8 @@ const getTransactionSuccessTitle = (props) => {
     return 'Collectible is on its way';
   } else if (transactionType === POOLTOGETHER_DEPOSIT_TRANSACTION) {
     return 'You\'re in the pool!';
+  } else if (transactionType === SABLIER_CREATE_STREAM) {
+    return 'Your stream has begun';
   }
   return 'Tokens are on their way';
 };

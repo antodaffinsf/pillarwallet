@@ -35,21 +35,6 @@ import { getPoolTogetherTransactions } from 'services/poolTogether';
 
 import { addressesEqual } from './assets';
 
-export const countDownDHMS = (remainingTimeMs: number) => {
-  const seconds = remainingTimeMs / 1000;
-  const days = Math.floor(seconds / 24 / 60 / 60);
-  const hoursLeft = Math.floor((seconds) - (days * 86400));
-  const hours = Math.floor(hoursLeft / 3600);
-  const minutesLeft = Math.floor((hoursLeft) - (hours * 3600));
-  const minutes = Math.floor(minutesLeft / 60);
-  const remainingSeconds = seconds % 60;
-  return {
-    days,
-    hours,
-    minutes,
-    remainingSeconds,
-  };
-};
 
 export const getWinChance = (currentCount: number = 0, totalPoolTicketsCount: number = 0): number => {
   return (currentCount * 100) / (totalPoolTicketsCount > 0 ? totalPoolTicketsCount : 1); // win chance in %

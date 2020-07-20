@@ -36,6 +36,11 @@ type Props = {
   theme: Theme,
   showLabel?: boolean,
   activeTab?: string,
+  colorStart?: string,
+  colorEnd?: string,
+  height?: number,
+  barPadding?: number,
+  emptyBarBackgroundColor?: string,
 };
 
 
@@ -47,8 +52,8 @@ type State = {
 
 const ProgressBarWrapper = styled.View`
   flex-direction: row;
-  background-color: ${themedColors.surface};
-  padding: 3px;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  padding: ${({ padding }) => padding}px;
   align-items: center;
   justify-content: flex-start;
   border-radius: 10;
@@ -57,7 +62,7 @@ const ProgressBarWrapper = styled.View`
 
 const StyledLinearGradient = styled(LinearGradient)`
   padding: 1px;
-  height: 14px;
+  height: ${({ height }) => height}px;
   border-radius: 10;
   overflow: hidden;
 `;
@@ -200,12 +205,23 @@ class Progress extends React.Component<Props, State> {
       );
     }
 
+    const {
+      colorStart = colors.progressBarStart,
+      colorEnd = colors.progressBarEnd,
+      barPadding = 3,
+      height = 14,
+      emptyBarBackgroundColor = colors.surface,
+    } = this.props;
+
     return (
-      <ProgressBarWrapper>
+      <ProgressBarWrapper
+        padding={barPadding}
+        backgroundColor={emptyBarBackgroundColor}
+      >
         <AnimatedStyledLinearGradient
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 0 }}
-          colors={[colors.progressBarStart, colors.progressBarEnd]}
+          colors={[colorStart, colorEnd]}
           full={progress === 100}
           style={{
             width: progressAnimated.interpolate({
@@ -213,6 +229,7 @@ class Progress extends React.Component<Props, State> {
               outputRange: ['0%', '100%'],
             }),
           }}
+          height={height}
         >
           {!!showLabel &&
             <ProgressLabel>{label}%</ProgressLabel>
